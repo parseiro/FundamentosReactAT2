@@ -5,7 +5,7 @@ import {useEffect, useState} from "react";
 export default function App() {
   const [estado, setEstado] = useState({
     consumo: '100',
-    pessoas: '1',
+    pessoas: '4',
     gorjetaPorcento: '10'
   });
   const [resultado, setResultado] = useState({
@@ -97,11 +97,13 @@ export default function App() {
               Resultado
             </h2>
             <p className="font-normal text-gray-700 dark:text-gray-400 text-right">
-              Total: R$ {resultado.totalFinal.toFixed(2)}
+              Consumo: R$ {parseFloat(consumo).toFixed(2).replace('.', ',')}
               <br/>
-              Gorjeta: R$ {resultado.gorjetaReais.toFixed(2)}
+              Gorjeta: R$ {resultado.gorjetaReais.toFixed(2).replace('.', ',')}
               <br/>
-              Por pessoa: R$ {resultado.porPessoa.toFixed(2)}
+              Total com gorjeta: R$ {resultado.totalFinal.toFixed(2).replace('.', ',')}
+              <br/>
+              Total por pessoa: R$ {resultado.porPessoa.toFixed(2).replace('.', ',')}
             </p>
           </Card>
         )}
